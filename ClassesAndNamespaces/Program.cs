@@ -17,13 +17,16 @@ namespace ClassesAndNamespaces
             //creates the bank accounts and then gives them values.
             //I am using the BankAccount class to hold data for different people.
             BankAccount bankAccount1 = new BankAccount(100f, "Joshua Johnson");
+            
+            //gets the balance prior to "AddBalance"
+            Console.WriteLine(bankAccount1.Balance);
 
             BankAccount bankAccount2 = new BankAccount(50f, "Jaclyn Johnson");
             
 
             //adds money to the bankAccount(s) using the AddBalance bethod.
             Console.WriteLine(bankAccount1.AddBalance(100f));
-            Console.WriteLine(bankAccount2.AddBalance(100f));
+            Console.WriteLine(bankAccount2.AddBalance(-2100f));
 
 
             Console.ReadLine();
