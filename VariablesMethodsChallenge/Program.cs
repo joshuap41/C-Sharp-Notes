@@ -6,6 +6,8 @@ namespace VariablesMethodsChallenge
     {
         //class level variables
         static int n1 = 10, n2 = 20;
+
+        //static allows a "Main" method to initiate without any dependents.
         private static void Main(string[] args)
         {
             var result = Add();
@@ -21,6 +23,7 @@ namespace VariablesMethodsChallenge
             Console.ReadLine();
         }
 
+        //values could be passed to the methods like this (int n1, int n2) if global variables were not being used.
         private static int Add()
         {
             return n1 + n2;
