@@ -40,7 +40,7 @@ namespace ClassesAndNamespaces.Classes
 
         public float AddBalance(float balanceToBeAdded)
         {
-            balance = balance + balanceToBeAdded;
+            Balance = balance + balanceToBeAdded;
             return Balance;
         }
 
