@@ -39,14 +39,15 @@ namespace BringingItAllTogether.Classes
         }
 
         //adds additional funds to the balance
-        public float AddBalance(float balanceToBeAdded)
+        //"virtual" allows a child class to inherit the method.
+        public virtual float AddBalance(float balanceToBeAdded)
         {
             Balance = balance + balanceToBeAdded;
             return Balance;
         }
 
         //using the overloaded method will allow me to set the variable instead of the property and allow a negative balance.
-        public float AddBalance(float balanceToBeAdded, bool balanceCanBeNegative)
+        public virtual float AddBalance(float balanceToBeAdded, bool balanceCanBeNegative)
         {
             //setting the variable only with the bool condition
             if (balanceCanBeNegative)
@@ -69,10 +70,25 @@ namespace BringingItAllTogether.Classes
     public class ChildAccountInformation : AccountInformation
     {
         public string Parent { get; set; }
-                                                                                    //"base" needs the parameters from the object class
+        //"base" needs the parameters from the object class
         public ChildAccountInformation(float balance, string owner, string parent) : base(balance, owner)
         {
             Parent = parent;
+        }
+        //simplified way to perform an "if" statement. Python....
+        //override is inheriting the method from the object class.
+        public override float AddBalance(float balanceToBeAdded)
+        {
+            if(balanceToBeAdded >= -10)
+                return base.AddBalance(balanceToBeAdded);
+            return Balance;
+        }
+
+        public override float AddBalance(float balanceToBeAdded, bool balanceCanBeNegative)
+        {
+            if(balanceToBeAdded >= -10)
+                return base.AddBalance(balanceToBeAdded, balanceCanBeNegative);
+            return Balance;
         }
     }
 

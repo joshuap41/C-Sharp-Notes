@@ -1,8 +1,6 @@
 ﻿using System;
-using BringingItAllTogether.Classes;
 
-
-namespace BringingItAllTogether
+namespace Interfaces
 {
     class Program
     {
@@ -23,12 +21,12 @@ namespace BringingItAllTogether
             Console.WriteLine(accountInformation2.AddBalance(-100000f, true));
             */
 
-            
+
             //using the interface feature
             AdvancedMath am = new AdvancedMath();
             Console.WriteLine(am.Remainder(23, 45));
 
-           
+
             Console.ReadLine();
         }
     }
@@ -50,7 +48,7 @@ namespace BringingItAllTogether
             return dividend % divisor;
         }
     }
-    
+
     class Math
     {
         public static float Add(float n1, float n2)
